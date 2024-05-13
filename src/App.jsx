@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Pricing from "./pages/Pricing";
-import Product from "./pages/Product";
-import NotFound from './pages/NotFound';
+import Homepage from "./pages/home/Homepage";
+import Product from "./pages/product/Product";
+import Pricing from "./pages/pricing/Pricing";
 import AppNav from "./components/appNav/AppNav";
-import Homepage from './pages/Homepage';
+import PageNotFound from "./pages/notFound/PageNotFound";
 
-function App() {
+const App = () => {
   return (
     <BrowserRouter>
       <Routes>
@@ -13,10 +13,10 @@ function App() {
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/product" element={<Product />} />
         <Route path="/app" element={<AppNav />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="*" element={<PageNotFound />} />
       </Routes>
     </BrowserRouter>
   );
-}
+};
 
 export default App;

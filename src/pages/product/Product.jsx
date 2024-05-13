@@ -1,6 +1,6 @@
-import styles from "./Product.module.css";
+import styles from "./product.module.css";
 
-export default function Product() {
+const Product = () => {
   return (
     <main className={styles.product}>
       <section>
@@ -25,4 +25,5 @@ export default function Product() {
       </section>
     </main>
   );
-}
+};
+export default Product;

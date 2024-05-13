@@ -1,6 +1,6 @@
-import styles from "./Homepage.module.css";
+import styles from "./homepage.module.css";
 
-export default function Homepage() {
+const Homepage = () => {
   return (
     <main className={styles.homepage}>
       <section>
@@ -17,4 +17,6 @@ export default function Homepage() {
       </section>
     </main>
   );
-}
+};
+
+export default Homepage;

@@ -1,4 +1,5 @@
-import AppNav from "../components/appNav/AppNav"
+
+import AppNav from './../../components/appNav/AppNav';
 
 
 const AppLayout = () => {
