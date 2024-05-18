@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import styles from "./button.module.css";
 
 const Button = ({ children, onClick, type }) => {

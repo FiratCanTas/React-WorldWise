@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import styles from "./map.module.css";
 
 const Map = () => {
