@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 import CountryList from "./components/countryList/CountryList";
+import City from "./components/city/City";
 
 const App = () => {
   const [cities, setCities] = useState([]);
@@ -47,6 +48,7 @@ const App = () => {
             path="cities"
             element={<CityList cities={cities} isLoading={isLoading} />}
           />
+          <Route path="cities/:id" element={<City />} />
           <Route
             path="countries"
             element={<CountryList cities={cities} isLoading={isLoading} />}
