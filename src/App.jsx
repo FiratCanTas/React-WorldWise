@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 const BASE_URL = import.meta.env.VITE_BASE_URL;
 import CountryList from "./components/countryList/CountryList";
 import City from "./components/city/City";
+import Form from "./components/form/Form";
 
 const App = () => {
   const [cities, setCities] = useState([]);
@@ -53,7 +54,7 @@ const App = () => {
             path="countries"
             element={<CountryList cities={cities} isLoading={isLoading} />}
           />
-          <Route path="form" element={<p>Form</p>} />
+          <Route path="form" element={<Form />} />
         </Route>
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<PageNotFound />} />
