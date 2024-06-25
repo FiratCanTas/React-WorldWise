@@ -3,7 +3,7 @@ import { useParams, useSearchParams } from "react-router-dom";
 import styles from "./City.module.css";
 import BackButton from "./../backButton/BackButton";
 import { useContext, useEffect } from "react";
-import { CitiesContext } from "../../contexts/CitiesContext";
+import { CitiesContext, useCities } from "../../contexts/CitiesContext";
 import Spinner from "../spinner/Spinner";
 import Flag from "../flag/Flag";
 
@@ -17,7 +17,7 @@ const formatDate = (date) =>
 
 const City = () => {
   const { id } = useParams();
-  const { currentCity, getCity, isLoading } = useContext(CitiesContext);
+  const { currentCity, getCity, isLoading } = useCities();
   const [searchParams, setSearchParams] = useSearchParams();
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
