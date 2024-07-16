@@ -1,25 +1,37 @@
 /* eslint-disable no-unused-vars */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./map.module.css";
 import { useSearchParams, useNavigate } from "react-router-dom";
-import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import {
+  MapContainer,
+  Marker,
+  Popup,
+  TileLayer,
+  useMap,
+  useMapEvents,
+} from "react-leaflet";
 import { useCities } from "../../contexts/CitiesContext";
 import { convertEmojiToPng } from "./../../helpers/convertEmojiToPng";
 
 const Map = () => {
-  const navigate = useNavigate();
   const { cities } = useCities();
-  const [mapPosition, setMapPosition] = useState([51.505, -0.09]);
-  const [searchParams, setSearchParams] = useSearchParams();
-  const lat = searchParams.get("lat");
-  const lng = searchParams.get("lng");
+  const [mapPosition, setMapPosition] = useState([40, 0]);
+  const [searchParams] = useSearchParams();
+  const mapLat = searchParams.get("lat");
+  const mapLng = searchParams.get("lng");
+
+  useEffect(() => {
+    if (mapLat && mapLng) {
+      setMapPosition([mapLat, mapLng]);
+    }
+  }, [mapLat, mapLng]);
 
   return (
     <div className={styles.mapContainer}>
       <MapContainer
         className={styles.map}
         center={mapPosition}
-        zoom={13}
+        zoom={6}
         scrollWheelZoom={true}
       >
         <TileLayer
@@ -39,9 +51,24 @@ const Map = () => {
             </Popup>
           </Marker>
         ))}
+        <ChangeCenter position={mapPosition} />
+        <DetectClick />
       </MapContainer>
     </div>
   );
+};
+
+const ChangeCenter = ({ position }) => {
+  const map = useMap();
+  map.setView(position);
+  return null;
+};
+
+const DetectClick = () => {
+  const navigate = useNavigate();
+  useMapEvents({
+    click: (e) => navigate("form"),
+  });
 };
 
 export default Map;
