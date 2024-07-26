@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
-import { useParams, useSearchParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styles from "./City.module.css";
 import BackButton from "./../backButton/BackButton";
-import { useContext, useEffect } from "react";
-import { CitiesContext, useCities } from "../../contexts/CitiesContext";
+import { useEffect } from "react";
+import { useCities } from "../../contexts/CitiesContext";
 import Spinner from "../spinner/Spinner";
 import Flag from "../flag/Flag";
 
@@ -18,9 +18,6 @@ const formatDate = (date) =>
 const City = () => {
   const { id } = useParams();
   const { currentCity, getCity, isLoading } = useCities();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const lat = searchParams.get("lat");
-  const lng = searchParams.get("lng");
 
   useEffect(() => {
     getCity(id);
