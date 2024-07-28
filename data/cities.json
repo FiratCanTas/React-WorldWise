@@ -25,18 +25,6 @@
       "id": "17806751"
     },
     {
-      "cityName": "Berlin",
-      "country": "Germany",
-      "emoji": "🇩🇪",
-      "date": "2027-02-12T09:24:11.863Z",
-      "notes": "Amazing 😃",
-      "position": {
-        "lat": 52.53586782505711,
-        "lng": 13.376933665713324
-      },
-      "id": "98443197"
-    },
-    {
       "cityName": "Faro",
       "country": "Portugal",
       "emoji": "🇵🇹",
@@ -70,30 +58,6 @@
       "position": {
         "lat": "48.84302835299519",
         "lng": "2.3455810546875004"
-      }
-    },
-    {
-      "id": "fcd7",
-      "cityName": "Arrou",
-      "emoji": "FR",
-      "country": "France",
-      "date": "2024-07-26T15:41:00.070Z",
-      "notes": "test2",
-      "position": {
-        "lat": "48.09275716032736",
-        "lng": "1.0876464843750002"
-      }
-    },
-    {
-      "id": "971b",
-      "cityName": "Arrou",
-      "emoji": "FR",
-      "country": "France",
-      "date": "2024-07-26T15:41:00.070Z",
-      "notes": "test2",
-      "position": {
-        "lat": "48.09275716032736",
-        "lng": "1.0876464843750002"
       }
     }
   ]
