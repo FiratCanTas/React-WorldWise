@@ -69,7 +69,7 @@ const Form = () => {
       },
     };
     await createCity(newCity);
-    navigate("app/cities");
+    navigate("/app/cities");
   };
 
   return (
