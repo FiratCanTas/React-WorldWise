@@ -11,6 +11,7 @@ import City from "./components/city/City";
 import Form from "./components/form/Form";
 import { CitiesProvider } from "./contexts/CitiesContext";
 import { AuthProvider } from "./contexts/AuthContext";
+import ProtectedRoute from "./pages/protectedRoute/ProtectedRoute";
 
 const App = () => {
   return (
@@ -21,7 +22,14 @@ const App = () => {
             <Route path="/" element={<Homepage />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/product" element={<Product />} />
-            <Route path="/app" element={<AppLayout />}>
+            <Route
+              path="/app"
+              element={
+                <ProtectedRoute>
+                  <AppLayout />
+                </ProtectedRoute>
+              }
+            >
               <Route index element={<Navigate to="cities" replace />} />
               <Route path="cities" element={<CityList />} />
               <Route path="cities/:id" element={<City />} />
